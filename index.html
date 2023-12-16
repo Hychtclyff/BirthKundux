@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Countdown/simplyCountdown.theme.default.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Philosopher&family=Raleway:wght@300&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="Countdown/simplyCountdown.min.js"></script>
+  </head>
+  <body>
+    <section class="hero d-flex flex-column p-5 text-center" id="hero">
+      <h1 class="m-3">Happy Birthday</h1>
+      <h3 class="m-3">Kharisma Salma</h3>
+      <span>17 Desember 2023</span>
+      <div class="simply-countdown d-flex"></div>
+
+      <button class="my-btn" onclick="enableScroll()"><i>Make Wish</i></button>
+    </section>
+
+    <section class="massage" id="massage">
+      <div class="d-flex flex-column justify-content-center">
+        <span class="text-center m-5 fs-1 fw-bold">باراك الله في عمريك</span>
+        <p class="fs-5">"Happy 21st Birthday, Kharisma Salma!</p>
+        <p>
+          Happy Birthday to the one who makes my heart skip a beat. Here's to
+          another year of love and adventures together. Your presence in my life
+          is the greatest gift. Happy Birthday, my love!
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="gallery d-flex justify-content-center flex-column align-content-center"
+      id="gallery"
+    >
+      <span class="m-4 text-center fs-1 fw-bold">Galerry</span>
+      <div class="frame-img">
+        <div class="frame-container">
+          <img class="img-cont" src="img/IMG20231106154832.jpg" alt="" />
+          <img class="img-cont" src="img/IMG20231106155144.jpg" alt="" />
+          <img class="img-cont" src="img/IMG20231106155149.jpg" alt="" />
+          <img class="img-cont" src="img/IMG20231106155313.jpg " alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="wish d-flex justify-content-center flex-column" id="wish">
+      <span class="text-center m-5 fs-1 text-light">Make Wish</span>
+      <div class="form p-5">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label text-light">From</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="wish" class="form-label text-light">Make Wish</label>
+            <input type="text" class="form-control" id="wish" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <div
+        class="wish-list m-1 d-flex justify-content-center align-content-center flex-column"
+      >
+        <span class="text-center fs-3 m-1 p-2 text-light">Your Wish</span>
+        <div
+          class="wish-container d-flex justify-content-center align-content-center flex-column"
+        >
+          <div class="list p-4 m-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+          </div>
+          <div class="list p-4 m-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+          </div>
+          <div class="list p-4 m-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+          </div>
+          <div class="list p-4 m-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      simplyCountdown(".simply-countdown", {
+        year: 2023, // required
+        month: 12, // required
+        day: 17, // required
+        hours: 1, // Default is 0 [0-23] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "Hari", plural: "hari" },
+          hours: { singular: "Jam", plural: "Jam" },
+          minutes: { singular: "Menit", plural: "Menit" },
+          seconds: { singular: "Detik", plural: "Detik" },
+        },
+      });
+    </script>
+
+    <script>
+      const rootElement = document.querySelector(":root");
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
+        localStorage.setItem("opened", "true");
+      }
+      if (!localStorage.getItem("opened")) {
+        disableScroll();
+      }
+    </script>
+  </body>
+</html>

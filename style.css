@@ -93,7 +93,7 @@ body {
 }
 .hero {
   height: 100vh;
-  background: url("../img/IMG_20231127_18133954.jpg");
+  background: url("img/IMG_20231127_18133954.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -137,7 +137,7 @@ body {
 .massage {
   padding: 5rem 2rem;
   height: 100vh;
-  background: url("../img/66bb0de9-c6fd-47d2-b20b-775fdd703e37.jpeg");
+  background: url("img/66bb0de9-c6fd-47d2-b20b-775fdd703e37.jpeg");
   background-size: cover;
   background-position: center;
 }
